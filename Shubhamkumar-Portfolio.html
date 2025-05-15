@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubhamkumar Patel - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom styles to match the reference website exactly */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6; /* Adjusted line height */
+            color: #e0e0e0; /* Light grey text color for dark background */
+            background-color: #1a1a1a; /* Dark background color */
+        }
+        .container {
+            max-width: 1200px; /* Adjusted container width */
+            margin: 0 auto;
+            padding: 0 1.5rem; /* Adjusted padding */
+        }
+        .section {
+            padding: 100px 0; /* Increased vertical spacing */
+        }
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800; /* Bolder title */
+            text-align: center;
+            margin-bottom: 20px; /* Reduced margin to make space for subtitle */
+            color: #ffffff; /* White title color */
+            position: relative;
+        }
+         .section-subtitle {
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 80px; /* Increased margin after subtitle */
+            color: #cccccc; /* Lighter grey subtitle color */
+         }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background-color: #ffc107; /* Yellow underline color */
+            margin: 15px auto 0;
+            border-radius: 3px;
+        }
+        .card {
+            background-color: #2c2c2c; /* Darker card background */
+            border-radius: 10px; /* More rounded corners */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+            padding: 30px;
+            margin-bottom: 30px;
+            color: #e0e0e0; /* Light text inside cards */
+        }
+        .project-card {
+            background-color: #2c2c2c;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            color: #e0e0e0; /* Light text inside cards */
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+        }
+         .project-card h3 {
+            font-size: 1.5rem; /* Project title size */
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffc107; /* Yellow project title color */
+        }
+        .project-card p {
+            margin-bottom: 10px;
+            color: #cccccc; /* Lighter text */
+        }
+        .project-card strong {
+            display: block;
+            margin-bottom: 5px;
+             color: #ffffff; /* White label color */
+             font-weight: 600;
+        }
+         .project-card span {
+            font-weight: normal;
+            color: #cccccc;
+        }
+         .skill-item {
+            background-color: #3a3a3a; /* Darker background for skills */
+            color: #ffc107; /* Yellow text for skills */
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .skill-item:hover {
+            background-color: #4a4a4a; /* Slightly lighter on hover */
+        }
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #3a3a3a; /* Darker separator line */
+        }
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        .experience-item h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffc107; /* Yellow title color */
+            margin-bottom: 8px;
+        }
+         .experience-item p {
+            margin-bottom: 8px;
+            color: #cccccc;
+        }
+        .experience-item ul {
+            list-style: disc;
+            margin-left: 25px;
+            color: #cccccc;
+        }
+         .certification-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #3a3a3a;
+        }
+        .certification-item:last-child {
+            border-bottom: none;
+        }
+        .certification-item h3 {
+             font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffc107;
+            margin-bottom: 8px;
+        }
+        .certification-item p {
+            color: #cccccc;
+        }
+
+        /* Navigation Bar Styling */
+        .header {
+            background-color: #2c2c2c; /* Darker header background */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .header .container {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             flex-wrap: wrap;
+        }
+        .header h1 {
+            font-size: 2rem; /* Name size */
+            font-weight: 800; /* Bolder name */
+            color: #ffc107; /* Yellow color for name */
+            margin-bottom: 0;
+        }
+         @media (max-width: 768px) {
+            .header h1 {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+             .header nav {
+                width: 100%;
+             }
+        }
+        .header nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .header nav a {
+            color: #e0e0e0; /* Light grey nav link color */
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+        .header nav a:hover {
+            color: #ffc107; /* Yellow on hover */
+        }
+
+        /* Hero Section (First Page) Styling */
+        #hero {
+            background-color: #1a1a1a; /* Dark background */
+            color: #ffffff; /* White text */
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            min-height: 80vh; /* Minimum height */
+        }
+        #hero .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+         @media (min-width: 768px) {
+            #hero .container {
+                flex-direction: row;
+                text-align: left;
+            }
+            #hero .hero-text {
+                flex: 1;
+                padding-right: 50px; /* Space between text and image */
+            }
+            #hero .hero-image {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        #hero h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #ffc107; /* Yellow "HELLO!" */
+            margin-bottom: 10px;
+        }
+        #hero h1 {
+            font-size: 3.5rem; /* Larger name size */
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+         #hero h1 span {
+            color: #ffc107; /* Yellow for the name part */
+         }
+        #hero p {
+            font-size: 1.8rem; /* Larger role text */
+            font-weight: 600;
+            color: #e0e0e0;
+            margin-bottom: 15px;
+        }
+         #hero .hero-buttons {
+            margin-top: 30px;
+         }
+         #hero .hero-buttons .btn {
+            display: inline-block;
+            background-color: #ffc107; /* Yellow button background */
+            color: #1a1a1a; /* Dark text */
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out;
+            margin: 0 10px; /* Space between buttons */
+         }
+         #hero .hero-buttons .btn:hover {
+            background-color: #e0a800; /* Darker yellow on hover */
+         }
+         #hero .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+         }
+
+
+         /* About Section Specifics */
+        #about .card p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #cccccc;
+        }
+         #about .card .grid {
+            gap: 15px;
+         }
+         #about .card .grid div {
+            display: flex;
+            align-items: center;
+            color: #e0e0e0;
+         }
+         #about .card .grid i {
+            margin-right: 10px;
+            color: #ffc107; /* Yellow icon color */
+         }
+         #about .card .grid a {
+            color: #ffc107; /* Yellow link color */
+         }
+         #about .card .grid a:hover {
+            text-decoration: underline;
+         }
+
+
+         /* Contact Section Specifics */
+         #contact .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 30px; /* Space between contact items */
+            margin-top: 40px; /* Space below subtitle */
+         }
+
+         @media (min-width: 768px) {
+             #contact .contact-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+             }
+         }
+
+          @media (min-width: 1024px) {
+             #contact .contact-info-grid {
+                grid-template-columns: repeat(4, 1fr);
+             }
+         }
+
+
+         #contact .contact-item {
+            text-align: center;
+         }
+
+         #contact .contact-icon {
+            display: inline-flex; /* Use inline-flex to center the circle */
+            justify-content: center;
+            align-items: center;
+            width: 70px; /* Circle size */
+            height: 70px; /* Circle size */
+            background-color: #2c2c2c; /* Dark background for circle */
+            border-radius: 50%; /* Make it a circle */
+            margin-bottom: 15px; /* Space below circle */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+         }
+
+         #contact .contact-icon i {
+            font-size: 2rem; /* Icon size */
+            color: #ffc107; /* Yellow icon color */
+         }
+
+         #contact .contact-item strong {
+            display: block; /* Label on its own line */
+            font-size: 1rem; /* Label font size */
+            font-weight: 600;
+            color: #ffffff; /* White label color */
+            margin-bottom: 5px; /* Space below label */
+         }
+
+         #contact .contact-item p,
+         #contact .contact-item a {
+            font-size: 0.9rem; /* Info font size */
+            color: #cccccc; /* Lighter grey info color */
+            text-decoration: none; /* Remove underline from links */
+            transition: color 0.3s ease-in-out;
+         }
+
+         #contact .contact-item a:hover {
+            color: #ffc107; /* Yellow on hover for links */
+         }
+
+         .download-btn {
+            display: inline-block;
+            background-color: #ffc107; /* Yellow button background */
+            color: #000000; /* Black text for visibility */
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out;
+            margin-top: 20px; /* Space above the button */
+         }
+         .download-btn:hover {
+            background-color: #e0a800; /* Darker yellow on hover */
+         }
+
+
+         /* Footer Styling */
+         footer {
+            background-color: #2c2c2c; /* Darker footer background */
+            color: #b0b0b0; /* Lighter grey text */
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+         }
+
+         /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+             .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 40px;
+             }
+            .section-title::after {
+                width: 60px;
+                height: 4px;
+                margin: 10px auto 0;
+            }
+            .card, .project-card {
+                padding: 20px;
+            }
+             .project-card h3, .experience-item h3, .certification-item h3 {
+                font-size: 1.2rem;
+            }
+            .skill-item {
+                padding: 6px 12px;
+                margin: 4px;
+                font-size: 0.85rem;
+            }
+             #hero h2 {
+                font-size: 1.2rem;
+             }
+             #hero h1 {
+                font-size: 2.5rem;
+             }
+             #hero p {
+                font-size: 1.4rem;
+             }
+             #hero .hero-buttons .btn {
+                padding: 10px 20px;
+                font-size: 1rem;
+             }
+             #about .card p {
+                font-size: 1rem;
+             }
+             #contact p {
+                font-size: 1rem;
+             }
+             #contact .text-2xl {
+                font-size: 1.5rem;
+             }
+             #contact a {
+                font-size: 1rem;
+             }
+             .download-btn {
+                padding: 10px 20px;
+                font-size: 1rem;
+             }
+             #contact .contact-icon {
+                width: 60px;
+                height: 60px;
+             }
+             #contact .contact-icon i {
+                font-size: 1.8rem;
+             }
+             #contact .contact-item strong {
+                font-size: 0.9rem;
+             }
+             #contact .contact-item p,
+             #contact .contact-item a {
+                font-size: 0.85rem;
+             }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>Shubhamkumar Patel</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h2>HELLO!</h2>
+                <h1>I'm <span>Shubhamkumar</span> Patel</h1>
+                <p>A Data Scientist</p>
+                <p>Insight Miner</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">MY WORK</a>
+                    <a href="https://www.linkedin.com/in/shubham-patel-178803279/" class="btn" target="_blank">LINKEDIN</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/files/WhatsApp Image 2025-05-15 at 15.06.34_3976a2cf.jpg" alt="Shubhamkumar Patel's photo">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="card">
+                <p>Aspiring Data Scientist pursuing a Post-Graduate Certificate in Data Analytics for Business at St. Clair College. Proficient in Python, Machine Learning, SQL, NoSQL, and data visualization using Tableau, Power BI, and Seaborn. Passionate about data science, with strong problem-solving, communication, and management skills. Seeking a role to apply my expertise, gain hands-on experience, and learn from industry professionals.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-base">
+                    <div><i class="fas fa-phone-alt"></i><strong>Phone:</strong> +1365-883-1689</div>
+                    <div><i class="fas fa-envelope"></i><strong>Email:</strong> shubham3012patel@gmail.com</div>
+                    <div><i class="fas fa-map-marker-alt"></i><strong>Location:</strong> Ontario, Canada</div>
+                    <div><i class="fab fa-linkedin"></i><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shubham-patel-178803279/" target="_blank">linkedin.com/in/shubham-patel-178803279/</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="card flex flex-wrap justify-center gap-2">
+                <span class="skill-item">Python</span>
+                <span class="skill-item">Excel</span>
+                <span class="skill-item">Machine Learning</span>
+                <span class="skill-item">Deep Learning SQL</span>
+                <span class="skill-item">Neural Networks</span>
+                <span class="skill-item">RNN</span>
+                <span class="skill-item">CNN</span>
+                <span class="skill-item">Tableau</span>
+                <span class="skill-item">Pandas</span>
+                <span class="skill-item">API Data Retrieval Flask</span>
+                <span class="skill-item">Azure Cloud Storage Service</span>
+                <span class="skill-item">Transformer</span>
+                <span class="skill-item">Tensorflow</span>
+                <span class="skill-item">LLms</span>
+                <span class="skill-item">CosmosDB</span>
+                <span class="skill-item">Numpy Speech Recognition</span>
+                <span class="skill-item">NLP & NLU</span>
+                <span class="skill-item">Statistical Modeling</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="card">
+                <div class="experience-item">
+                    <h3>Data Analyst</h3>
+                    <p><strong>Accelpix</strong> | 01/2022 - 12/2022 | Gujarat, India</p>
+                    <ul>
+                        <li>Cleaned and processed large datasets for analysis using Python, SQL, Excel, and Tableau.</li>
+                        <li>Automated data cleaning workflows, enhancing accuracy and reducing manual effort with machine learning and deep learning techniques.</li>
+                        <li>Collaborated with stakeholders to understand data needs and provide key insights using Tableau, Python, and SQL.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="project-card">
+                    <h3>AI Scriber</h3>
+                    <p><strong>Dates:</strong> 09/2024 - 04/2025 | Windsor, Canada</p>
+                    <p><strong>Link:</strong> <a href="http://ai-scriber.com" target="_blank">ai-scriber.com</a></p>
+                    <p><strong>Description:</strong> Creating an AI-driven tool designed to improve healthcare efficiency by summarizing patient medical histories and suggesting treatments based on symptoms. Key features include real-time symptom capture via voice-to-text technology, AI-assisted diagnosis, and treatment recommendations. Utilized large language models (LLMs) and medical datasets to enhance doctor-patient interactions and facilitate informed decision-decision-making.</p>
+                    <p><strong>Technologies Used:</strong> <span>Python, TensorFlow, Hugging Face Transformers, Speech-to-Text, Microsoft Azure, Large Language Models</span></p>
+                </div>
+                <div class="project-card">
+                    <h3>Chicago Crime Rate Data Visualization</h3>
+                    <p><strong>Dates:</strong> 01/2024 - 04/2024 | Windsor, Canada</p>
+                     <p><strong>Description:</strong> Conducted exploratory data analysis (EDA) using Python to uncover crime trends and patterns. Created interactive dashboards in Tableau to visualize crime rates across different years and locations in Chicago. Provided insights for residents and visitors by analyzing crime distribution by state and time trends.</p>
+                    <p><strong>Technologies Used:</strong> <span>Python, Tableau</span></p>
+                </div>
+                <div class="project-card">
+                    <h3>Credit Card Segmentation</h3>
+                    <p><strong>Dates:</strong> 09/2024 - 12/2024 | Windsor, Canada</p>
+                    <p><strong>Description:</strong> Implemented unsupervised learning techniques for credit card segmentation using k-means clustering and mean shift algorithms. Developed a Customer Lifetime Value (CLV) model to analyze customer spending behavior and predict long-term value.</p>
+                    <p><strong>Technologies Used:</strong> <span>Python, Machine Learning, Matplotlib, Seaborn, Joblib</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="card">
+                <div class="certification-item">
+                    <h3>IBM Data Science</h3>
+                    <p>Covered data science fundamentals, including data analysis, visualization, Python programming, machine learning, and SQL. Gained hands-on experience through projects to analyze and visualize data. Applied machine learning techniques to solve real-world data science problems. Developed proficiency in using key tools for data analysis and interpretation.</p>
+                </div>
+                 <div class="certification-item">
+                    <h3>Microsoft Azure SQL Database</h3>
+                    <p>Provided an introduction to Azure SQL Database, covering cloud data storage, database design, and performance optimization. Gained skills to manage, secure, and query data using Azure SQL services. Learned to work with SQL databases on the Azure platform for real-world applications.</p>
+                </div>
+                 <div class="certification-item">
+                    <h3>Python 3 Standard Library</h3>
+                    <p>Provided an in-depth understanding of the Python 3 Standard Library, covering essential modules and tools. Enhanced skills in file handling, data manipulation, and regular expressions. Improved ability to write efficient and effective Python code for various applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <p class="section-subtitle">Below are the details to reach out to me!</p>
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <strong>ADDRESS</strong>
+                    <p>Ontario, Canada</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <strong>CONTACT NUMBER</strong>
+                    <p>+1365-883-1689</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <strong>EMAIL ADDRESS</strong>
+                    <p><a href="mailto:shubham3012patel@gmail.com">shubham3012patel@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <strong>DOWNLOAD RESUME</strong>
+                    <p><a href="/files/ShubhamkumarPatelResume.pdf" download="ShubhamkumarPatelResume.pdf">resumelink</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Shubhamkumar Patel. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
